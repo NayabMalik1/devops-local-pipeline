@@ -1,0 +1,109 @@
+{
+"dashboard": {
+"id": null,
+"title": "DevOps Local Dashboard",
+"tags": ["devops", "local"],
+"timezone": "browser",
+"panels": [
+{
+"id": 1,
+"title": "CPU Usage",
+"type": "stat",
+"targets": [
+{
+"expr": "100 - (avg by (instance) (rate(node_cpu_seconds_total{mode=\"idle\"}[5m]))
+"legendFormat": "CPU Usage %"
+}
+],
+"fieldConfig": {
+"defaults": {
+"unit": "percent",
+"thresholds": {
+"steps": [
+{"color": "green", "value": null},
+{"color": "yellow", "value": 70},
+{"color": "red", "value": 90}
+]
+}
+}
+},
+"gridPos": {"h": 8, "w": 12, "x": 0, "y": 0}
+},
+{
+"id": 2,
+"title": "Memory Usage",
+"type": "stat",
+"targets": [
+{
+"expr": "(1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100"
+"legendFormat": "Memory Usage %"
+}
+],
+"fieldConfig": {
+"defaults": {
+"unit": "percent",
+"thresholds": {
+"steps": [
+{"color": "green", "value": null},
+{"color": "yellow", "value": 70},
+{"color": "red", "value": 90}
+]
+}
+}
+},
+"gridPos": {"h": 8, "w": 12, "x": 12, "y": 0}
+},
+{
+"id": 3,
+"title": "Disk Usage",
+"type": "stat",
+"targets": [
+{
+"expr": "(1 - (node_filesystem_avail_bytes{mountpoint=\"/\"} / node_filesystem_size
+"legendFormat": "Disk Usage %"
+}
+],
+"fieldConfig": {
+"defaults": {
+"unit": "percent",
+"thresholds": {
+"steps": [
+{"color": "green", "value": null},
+{"color": "yellow", "value": 70},
+{"color": "red", "value": 90}
+]
+}
+}
+},
+"gridPos": {"h": 8, "w": 12, "x": 0, "y": 8}
+},
+{
+"id": 4,
+"title": "Application Uptime",
+"type": "stat",
+"targets": [
+{
+"expr": "up{job=\"webapp\"}",
+"legendFormat": "App Status"
+6. GitHub Actions CI/CD
+File: .github/workflows/ci-cd.yml
+}
+],
+"fieldConfig": {
+"defaults": {
+"mappings": [
+{"options": {"0": {"text": "DOWN", "color": "red"}}},
+{"options": {"1": {"text": "UP", "color": "green"}}}
+]
+}
+},
+"gridPos": {"h": 8, "w": 12, "x": 12, "y": 8}
+}
+],
+"time": {
+"from": "now-1h",
+"to": "now"
+},
+"refresh": "5s"
+}
+}
