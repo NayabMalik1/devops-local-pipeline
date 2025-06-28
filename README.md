@@ -52,11 +52,16 @@ chmod +x infrastructure/scripts/setup.sh
 
 3. **Open services:**
 
-* Web App → [http://localhost](http://localhost)
-* Grafana → [http://localhost:3000](http://localhost:3000) (admin/admin123)
-* Prometheus → [http://localhost:9090](http://localhost:9090)
+## 🔗 Application Access Links (Run in Browser)
 
----
+Here are the key endpoints of the project you can test locally:
+
+1. 🌐 [Web Application](http://localhost:8000)
+2. 📈 [Prometheus UI](http://localhost:9090)
+3. 📊 [Grafana UI](http://localhost:3000)
+4. 🧪 [Health Check API](http://localhost:8000/health)
+5. 📉 [Metrics Endpoint (Custom)](http://localhost:8000/metrics)
+
 
 ## 🧪 Testing
 
