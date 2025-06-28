@@ -90,20 +90,7 @@ pytest tests/ -v
 
 ## 👩‍💻 Author
 
-**Nayab Zahoor** – [GitHub](https://github.com/yourusername)
-Course: BSE-410 (Cloud Computing)
+**Nayab Zahoor**
 University: Fatima Jinnah Women University
 
----
-
-## 📄 License
-
-This project is for educational use only.
-
-```
-
----
-
-Would you like me to generate this `README.md` as a ready-to-use file for you now?
-```
 
